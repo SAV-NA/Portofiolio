@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Savero</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom, #ffffff, #f7f8ff); color: #222; overflow-x: hidden; position: relative; }
+    
+    /* Bentuk dinamis */
+    .shape { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.6; animation: float 10s ease-in-out infinite; }
+    .shape1 { background: #6366f1; width: 250px; height: 250px; top: -80px; left: -80px; }
+    .shape2 { background: #ec4899; width: 180px; height: 180px; bottom: 40px; right: 60px; animation-delay: 2s; }
+    .shape3 { background: #22d3ee; width: 200px; height: 200px; top: 50%; left: -100px; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.05); }
+    }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; position: relative; z-index: 2; }
+    header h1 { font-size: 28px; font-weight: 800; }
+    nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; }
+    nav a:hover { text-decoration: underline; }
+
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 80px 20px; position: relative; z-index: 2; }
+    .hero h2 { font-size: 38px; font-weight: 800; color: #222; }
+    .hero span { color: #6366f1; }
+    .hero p { margin-top: 15px; max-width: 600px; color: #555; }
+    .hero button { margin-top: 25px; background: #6366f1; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(99,102,241,0.4); transition: all 0.3s; }
+    .hero button:hover { background: #4f46e5; transform: scale(1.05); }
+
+    .projects, .about, .contact { max-width: 1000px; margin: 60px auto; padding: 0 20px; position: relative; z-index: 2; }
+    h3.section-title { font-size: 24px; font-weight: 700; margin-bottom: 20px; text-align: center; }
+
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .project { background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+    .project:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .project h4 { margin-top: 10px; font-size: 18px; font-weight: 600; }
+    .project p { font-size: 14px; color: #555; margin-top: 6px; }
+    .tags { margin-top: 10px; }
+    .tag { display: inline-block; background: #eef; color: #333; padding: 4px 10px; border-radius: 20px; font-size: 12px; margin: 3px; }
+
+    .about p { color: #555; line-height: 1.6; text-align: center; max-width: 700px; margin: auto; }
+
+    .contact form { display: flex; flex-direction: column; gap: 10px; max-width: 500px; margin: 20px auto; }
+    input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 10px; }
+    button.send { background: #6366f1; color: white; border: none; padding: 10px; border-radius: 10px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 10px rgba(99,102,241,0.4); transition: 0.3s; }
+    button.send:hover { background: #4f46e5; transform: scale(1.05); }
+
+    footer { text-align: center; font-size: 14px; color: #777; padding: 30px 0; position: relative; z-index: 2; }
+  </style>
+</head>
+<body>
+  <div class="shape shape1"></div>
+  <div class="shape shape2"></div>
+  <div class="shape shape3"></div>
+
+  <header>
+    <h1>Savero</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hai, aku <span>Savero</span></h2>
+    <p>Aku suka main warna, tipografi, dan bikin desain yang nggak biasa. Pengen hasil yang nyenggol mata tapi tetep rapi ✨</p>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+  </section>
+
+  <section class="projects" id="projects">
+    <h3 class="section-title">Selected Projects</h3>
+    <div class="project-grid">
+      <div class="project">
+        <div class="thumb" style="background:#eee;height:140px;border-radius:10px;"></div>
+        <h4>Branding untuk Kafe Lokal</h4>
+        <p>Logo, packaging, dan desain interior konsep cozy-minimal.</p>
+        <div class="tags">
+          <span class="tag">Branding</span><span class="tag">Packaging</span>
+        </div>
+      </div>
+      <div class="project">
+        <div class="thumb" style="background:#eee;height:140px;border-radius:10px;"></div>
+        <h4>Poster Festival Musik</h4>
+        <p>Poster seri untuk festival musik indie dengan pendekatan tipografi eksperimental.</p>
+        <div class="tags">
+          <span class="tag">Poster</span><span class="tag">Typo</span>
+        </div>
+      </div>
+      <div class="project">
+        <div class="thumb" style="background:#eee;height:140px;border-radius:10px;"></div>
+        <h4>UI Kit — Mobile App</h4>
+        <p>Desain UI kit untuk aplikasi lifestyle: komponen modern, micro-interactions.</p>
+        <div class="tags">
+          <span class="tag">UI/UX</span><span class="tag">Figma</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h3 class="section-title">About Me</h3>
+    <p>Aku fokus ke desain visual, branding, dan poster art. Lewat proses yang rapi dan percobaan warna yang berani, aku pengen bikin karya yang gampang diinget.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h3 class="section-title">Contact</h3>
+    <form onsubmit="event.preventDefault(); alert('Pesan terkirim! 💌')">
+      <input type="text" placeholder="Nama" required />
+      <input type="email" placeholder="Email" required />
+      <textarea rows="4" placeholder="Pesan kamu..." required></textarea>
+      <button type="submit" class="send">Kirim</button>
+    </form>
+  </section>
+
+  <footer>© 2025 Savero — Made with style</footer>
+</body>
+</html>
